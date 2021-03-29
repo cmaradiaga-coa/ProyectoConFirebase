@@ -12,3 +12,37 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+
+function verAutenticacion(){
+  firebase.auth().onAuthStateChanged(res => {
+    if(res == null) {  // no hay sesion activa, no esta logueado
+        document.getElementById("itemSalir").style.display="none";
+        document.getElementById("itemTipoLibro").style.display="none";
+        document.getElementById("itemLibro").style.display="none";
+        document.getElementById("itemPrestamos").style.display="none";
+        document.getElementById("itemRegitsro").style.display="inline-block";
+
+        document.getElementById("divRedes").style.visibility="visible";
+        document.getElementById("divDatosUsu").style.visibility="hidden";
+    } else {
+      document.getElementById("itemSalir").style.display="inline-block";
+      document.getElementById("itemTipoLibro").style.display="inline-block";
+      document.getElementById("itemLibro").style.display="inline-block";
+      document.getElementById("itemPrestamos").style.display="inline-block";
+      document.getElementById("itemRegitsro").style.display="none";
+
+      document.getElementById("divRedes").style.visibility="hidden";
+      document.getElementById("divDatosUsu").style.visibility="visible";
+    }
+  });
+}
+
+
+function Salir() {
+    firebase.auth().signOut()
+            .then(res => {
+              document.location.href="/";
+            }).cathc(error => {
+              alert(error);
+            })
+}

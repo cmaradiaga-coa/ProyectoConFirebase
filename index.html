@@ -23,12 +23,12 @@
     
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item active" id="itemRegistro">
                             <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">
                                 Registro <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="itemTipoLibro">
                             <a class="nav-link" href="/tipoLibro.html">Tipo Libro</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
@@ -43,14 +43,14 @@
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li> -->
-                        <li class="nav-item">
+                        <li class="nav-item" id="itemLibro">
                             <a class="nav-link" href="/libro.html" tabindex="-1" aria-disabled="false">Libro</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="itemPrestamos">
                             <a class="nav-link" href="/misPrestamos.html" tabindex="-1" aria-disabled="false">Mis Préstamos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/misPrestamos.html" tabindex="-1" 
+                        <li class="nav-item" id="itemSalir">
+                            <a class="nav-link" tabindex="-1" 
                              aria-disabled="false" onclick="Salir()">Salida</a>
                         </li>
                     </ul>
@@ -79,7 +79,7 @@
     </div>
 
      <!-- Para el Inicio de Sesión:  -->
-    <div class="row">
+    <div class="row" id="divDatosUsu">
         <div class="form-group col-md-6 m-auto">
             <label>Ingrese el Correo</label>
             <input type="text" id="txtCorreoIngresar" class="form-control">
@@ -155,6 +155,7 @@
 
     <script src="js/generic.js"></script>
     <script src="js/index.js"></script>
+
 
 </body>
 </html>

@@ -1,4 +1,8 @@
 
+window.onload = function() {
+    verAutenticacion();
+}
+
 function createUser() {
 
     let email= document.getElementById("txtCorreo").value;
@@ -33,5 +37,5 @@ function iniciarSesion() {
                 document.getElementById("alertErrorLogueo").style.display="block";
                 document.getElementById("alertErrorLogueo").innerHTML = err;
             });
-
 }
+

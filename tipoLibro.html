@@ -8,7 +8,9 @@
     <title>Tipo Libro</title>
 </head>
 <body>
-    <div class="bg-ligth">
+
+     <!-- Menú de Opciones:  -->
+     <div class="bg-light">
         <div class="d-flex justify-content-center row">
             <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth col-md-9">
                 <!-- <a class="navbar-brand" href="#">Navbar</a> -->
@@ -19,10 +21,12 @@
     
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Registro <span class="sr-only">(current)</span></a>
+                        <li class="nav-item active" id="itemRegistro">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">
+                                Registro <span class="sr-only">(current)</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="itemTipoLibro">
                             <a class="nav-link" href="/tipoLibro.html">Tipo Libro</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
@@ -37,14 +41,14 @@
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li> -->
-                        <li class="nav-item">
+                        <li class="nav-item" id="itemLibro">
                             <a class="nav-link" href="/libro.html" tabindex="-1" aria-disabled="false">Libro</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="itemPrestamos">
                             <a class="nav-link" href="/misPrestamos.html" tabindex="-1" aria-disabled="false">Mis Préstamos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/misPrestamos.html" tabindex="-1" 
+                        <li class="nav-item" id="itemSalir">
+                            <a class="nav-link" tabindex="-1" 
                              aria-disabled="false" onclick="Salir()">Salida</a>
                         </li>
                     </ul>
@@ -68,5 +72,8 @@
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="js/generic.js"></script>
+    <script src="js/tipoLibro.js"></script>
 </body>
 </html>
