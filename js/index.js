@@ -1,3 +1,6 @@
+window.onload = function() {
+    verAutenticacion();
+}
 
 window.onload = function() {
     verAutenticacion();

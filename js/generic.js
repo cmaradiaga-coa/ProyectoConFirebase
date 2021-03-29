@@ -11,7 +11,7 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  firebase.analytics;
 
 function verAutenticacion(){
   firebase.auth().onAuthStateChanged(res => {
@@ -20,19 +20,31 @@ function verAutenticacion(){
         document.getElementById("itemTipoLibro").style.display="none";
         document.getElementById("itemLibro").style.display="none";
         document.getElementById("itemPrestamos").style.display="none";
-        document.getElementById("itemRegitsro").style.display="inline-block";
+        document.getElementById("itemRegistro").style.display="inline-block";
 
-        document.getElementById("divRedes").style.visibility="visible";
-        document.getElementById("divDatosUsu").style.visibility="hidden";
+        if(document.getElementById("divRedes")) {
+          document.getElementById("divRedes").style.visibility="visible";
+          document.getElementById("divDatosUsu").style.visibility="hidden";
+        }
+        
     } else {
       document.getElementById("itemSalir").style.display="inline-block";
       document.getElementById("itemTipoLibro").style.display="inline-block";
       document.getElementById("itemLibro").style.display="inline-block";
       document.getElementById("itemPrestamos").style.display="inline-block";
-      document.getElementById("itemRegitsro").style.display="none";
+      document.getElementById("itemRegistro").style.display="none";
 
-      document.getElementById("divRedes").style.visibility="hidden";
-      document.getElementById("divDatosUsu").style.visibility="visible";
+      if(document.getElementById("divRedes")) {
+        document.getElementById("divRedes").style.visibility="hidden";
+        document.getElementById("divDatosUsu").style.visibility="visible";
+      }
+      
+      if(res.displayName != null) {
+        document.getElementById("lblNombreUsuario").innerHTML = "Bienvenido " + res.displayName;
+      }
+      else {
+        document.getElementById("lblNombreUsuario").innerHTML = "Bienvenido " + res.email;
+      }
     }
   });
 }
